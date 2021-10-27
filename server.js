@@ -51,7 +51,17 @@ app.use("/login", loginRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  res.render("index");
+  const userId = req.session.user_id;
+  if (userId) {
+    db.query(`SELECT * FROM users WHERE user_id = $1`, [userId])
+    .then((data) => {
+      console.log(data.rows[0]);
+      res.render("index", {name: data.rows[0].name});
+    })
+    .catch((error) => {
+      res.status;
+    });
+  }
 });
 
 app.listen(PORT, () => {
