@@ -14,7 +14,10 @@
 </head>
 
 <body>
-  <h1>Have fun! 🥔</h1>
+  <% if(name) { %>
+    <h1><%= name + ', '%></h1>
+  <% }%>
+  <h1> Have fun! 🥔</h1>
 </body>
 
 </html>
