@@ -6,6 +6,20 @@ body {
   background: rgb(255,248,229);
 background: radial-gradient(circle, rgba(255,248,229,0.3575805322128851) 45%, rgba(255,179,68,0.365983893557423) 91%);
 
+
+h1 {
+  font-size: 2em;
+  color: #323232;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+
+@media (min-width: 992px) {
+
+  body main {
+    top: 140px;
+  }
 }
 
 
