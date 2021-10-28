@@ -56,3 +56,120 @@
     padding: 16px;
     width: 100%;
   }
+
+
+
+
+  .navbar-collapse.collapsing {
+    height: 100vh;
+    width: 35vh;
+    top: 82px;
+    background: rgb(74, 68, 242);
+    background: linear-gradient(0deg, rgba(74, 68, 242, 1) 0%, rgba(55, 38, 166, 1) 100%);
+    -webkit-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+    -moz-transition: left 0.3s ease;
+    transition: left 0.3s ease;
+    left: -100%;
+  }
+  
+  .navbar-collapse.show {
+    height: 100vh;
+    width: 35vh;
+    left: 0;
+    top: 82px;
+    z-index: 1;
+    background: rgb(74, 68, 242);
+    background: linear-gradient(0deg, rgba(74, 68, 242, 1) 0%, rgba(55, 38, 166, 1) 100%);
+    -webkit-transition: left 0.3s ease-in;
+    -o-transition: left 0.3s ease-in;
+    -moz-transition: left 0.3s ease-in;
+    transition: left 0.3s ease-in;
+  }
+  
+  hr {
+    border-top: 1px solid rgba(255, 255, 255, .75);}
+
+
+
+
+  @media (min-width: 992px) {
+  
+    .navbar-brand span {
+      display: inline;
+      font-size: 1.5em;
+    }
+  
+    .nav-item i {
+      margin-right: 8px;
+    }
+  
+    .navbar-collapse {
+      top: 82px;
+      height: 64px;
+    }
+  
+    .navbar-nav.mr-auto {
+      margin-top: 0;
+      margin-right: 0 !important;
+    }
+  
+    hr {
+      border: none;
+    }
+  
+    article.task {
+      max-width: 80%;
+    }
+  
+    #newTask {
+      top: 176px;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+/* CSS */
+.button-36 {
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 2rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-36:hover {
+    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+    transition-duration: .1s;
+  }
+  
+  @media (min-width: 768px) {
+    .button-36 {
+      padding: 0 2.6rem;
+    }
+  }
