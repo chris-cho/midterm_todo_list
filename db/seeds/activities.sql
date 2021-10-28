@@ -1,14 +1,9 @@
-INSERT INTO books (rating, author, title, genre)
+INSERT INTO movies (rating, director, title, genre, url)
 VALUES
-  (4, 'E. B. White', 'Charlottes Web', 'Children'),
-  (3.5, 'J. K. Rowling', 'Harry Potter', 'Fantasy');
+  (4, 'James Cameron', 'Avatar', 'Sci-fi', 'https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_FMjpg_UX1000_.jpg'),
+  (5, 'Christopher Nolan', 'Inception', 'Action', 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg');
 
-INSERT INTO movies (rating, director, title, genre)
+INSERT INTO products (rating, name, category, price, url)
 VALUES
-  (4, 'James Cameron', 'Avatar', 'Sci-fi'),
-  (5, 'Christopher Nolan', 'Inception', 'Action');
-
-INSERT INTO products (rating, name, category, price)
-VALUES
-  (3, 'USB hub', 'Electronics', 1399),
-  (4, 'LG OLED TV', 'Electronics', 169900);
+  (3, 'USB hub', 'Electronics', 1399, 'https://m.media-amazon.com/images/I/618yivEe--L._AC_SL1500_.jpg'),
+  (4, 'LG OLED TV', 'Electronics', 169900, 'https://www.lg.com/us/images/tvs/md06065216/gallery/OLED65C9PUA_1100_v6.jpg');
