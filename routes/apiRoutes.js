@@ -39,7 +39,7 @@ module.exports = (db) => {
                 console.log(err);
               } else if (response.statusCode === 200) {
                 const details = JSON.parse(body);
-                console.log(details[sliced[key].id.slice(7,16)].title.title.image.url, details[sliced[key].id.slice(7,16)].title.title, details[sliced[key].id.slice(7,16)].ratings.rating, details[sliced[key].id.slice(7,16)].genres[0], );
+                console.log( details[sliced[key].id.slice(7,16)].title.title, details[sliced[key].id.slice(7,16)].ratings.rating, details[sliced[key].id.slice(7,16)].genres[0], );
               } else {
                 console.log(response.statusCode);
               }
