@@ -2,6 +2,7 @@ const { request } = require('express');
 const express = require('express');
 const router  = express.Router();
 const requests = require('request');
+const database = require('../public/scripts/database');
 
 module.exports = (db) => {
   router.get("/movies", (req, res) => {

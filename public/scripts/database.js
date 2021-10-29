@@ -1,3 +1,9 @@
+require("dotenv").config();
+const { Pool } = require("pg");
+const dbParams = require("../../lib/db.js");
+const db = new Pool(dbParams);
+db.connect();
+
 //this should be triggered on the click of the ADD button for a movie task
 const addMovie = function(movie) {
   const queryString = `
@@ -5,7 +11,7 @@ const addMovie = function(movie) {
   VALUES
     ($1, $2, $3, $4, $5);`;
   const params = [movie.rating, movie.director, movie.title, movie.genre, movie.url];
-  return pool.query(queryString, params)
+  return db.query(queryString, params)
     .then(res => res.rows);
 };
 exports.addMovie = addMovie;
@@ -15,7 +21,7 @@ const delMovie = function(movie_id) {
   DELETE FROM movies
   WHERE id = $1;`;
   const params = [movie_id];
-  return pool.query(queryString, params)
+  return db.query(queryString, params)
     .then(res => res.rows);
 };
 exports.delMovie = delMovie;
@@ -25,7 +31,7 @@ const viewMovie = function(movie_id) {
   SELECT * FROM movies
   WHERE id = $1;`;
   const params = [movie_id];
-  return pool.query(queryString, params)
-    .then(res => res.rows);
+  return db.query(queryString, params)
+    .then(res => res.rows[0]);
 };
 exports.viewMovie = viewMovie;
