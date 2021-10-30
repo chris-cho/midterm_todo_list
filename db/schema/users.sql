@@ -15,7 +15,8 @@ CREATE TABLE lists (
   name VARCHAR(255) NOT NULL,
   active BOOLEAN NOT NULL DEFAULT true,
   date_created DATE NOT NULL,
-  due_date DATE
+  due_date DATE,
+  FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE tasks (
@@ -25,5 +26,7 @@ CREATE TABLE tasks (
   activity_id VARCHAR(255) NOT NULL,
   active BOOLEAN NOT NULL DEFAULT true,
   date_created DATE NOT NULL,
-  due_date DATE
+  due_date DATE,
+  FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+  FOREIGN KEY(list_id) REFERENCES lists(id) ON DELETE CASCADE
 );
