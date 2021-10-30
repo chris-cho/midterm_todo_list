@@ -5,12 +5,20 @@ const db = new Pool(dbParams);
 db.connect();
 
 //this should be triggered on the click of the ADD button for a movie task
-const addMovie = function(movie) {
+const addMovie = function(movie, list) {
   const queryString = `
   INSERT INTO products (rating, director, title, genre, url)
   VALUES
-    ($1, $2, $3, $4, $5);`;
-  const params = [movie.rating, movie.director, movie.title, movie.genre, movie.url];
+    ($1, $2, $3, $4, $5);
+
+  INSERT INTO tasks (user_id, list_id, date_created, due_date)
+  VALUES
+    ($6, $7, $8, $9);
+
+  INSERT INTO tasks (activity_id)
+  SELECT id FROM products WHERE title = $3;`;
+
+  const params = [movie.rating, movie.director, movie.title, movie.genre, movie.url, list.user_id, list.id, list.due_date];
   return db.query(queryString, params)
     .then(res => res.rows);
 };
@@ -40,8 +48,21 @@ const addProduct = function(product) {
   const queryString = `
   INSERT INTO products (rating, name, category, price, url)
   VALUES
+<<<<<<< HEAD
     ($1, $2, $3, $4, $5);`;
   const params = [product.rating, product.name, product.category, product.price, product.url];
+=======
+    ($1, $2, $3, $4, $5);
+
+  INSERT INTO tasks (user_id, list_id, date_created, due_date)
+  VALUES
+    ($6, $7, $8, $9);
+
+  INSERT INTO tasks (activity_id)
+  SELECT id FROM products WHERE name = $2;`;
+
+  const params = [product.rating, product.name, product.category, product.price, product.url, list.user_id, list.id, list.due_date];
+>>>>>>> feature-movies
   return pool.query(queryString, params)
     .then(res => res.rows);
 };
@@ -66,3 +87,38 @@ const viewProduct = function(product_id) {
     .then(res => res.rows);
 };
 exports.viewProduct = viewProduct;
+<<<<<<< HEAD
+=======
+
+const addList = function(list) {
+  const queryString = `
+  INSERT INTO lists (user_id, name, active, date_created, due_date)
+  VALUES
+    ($1, $2, $3, $4, $5);`;
+  const params = [lists.user_id, lists.name, lists.active, lists.date_created, lists.due_date];
+  return pool.query(queryString, params)
+    .then(res => res.rows);
+};
+exports.addList = addList;
+
+const viewList = function(list_id) {
+  const queryString = `
+  SELECT FROM lists
+  WHERE id = $1;`;
+  const params = [list_id];
+  return pool.query(queryString, params)
+    .then(res => res.rows);
+};
+exports.viewList = viewList;
+
+const delList = function(list_id) {
+  const queryString = `
+  SELECT * FROM lists
+  WHERE id = $1;`;
+  const params = [list_id];
+  return pool.query(queryString, params)
+    .then(res => res.rows);
+};
+exports.delList = delList;
+
+>>>>>>> feature-movies

@@ -1,6 +1,17 @@
 $(document).ready(function() {
-  $(".btn-primary").click(function(event) {
+  $(".watch").click(function(event) {
+    console.log("click");
     event.preventDefault();
     movies();
+  });
+  $(".buy").click(function(event) {
+    console.log("click");
+    event.preventDefault();
+    products();
+  });
+  $(".list").click(function(event) {
+    console.log("click");
+    event.preventDefault();
+    lists();
   });
 });

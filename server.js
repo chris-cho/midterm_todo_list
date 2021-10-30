@@ -69,6 +69,7 @@ app.get("/", (req, res) => {
       console.log(error.message);
     });
   }
+
 });
 
 app.listen(PORT, () => {

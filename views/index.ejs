@@ -1,26 +1,84 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
-
+<meta charset="utf-8">
 <head>
-  <title>Home Page!</title>
+  <!-- Meta Information -->
+  <title>DUO TASKER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- External CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 
+  <!-- External Google Fonts Cabin-->
+  <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
+  <!-- Bootstrap form datePicker-->
+  <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css"
+    rel="stylesheet" />
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+
+
+  <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script type="text/javascript" src="/scripts/database.js"></script>
   <script type="text/javascript" src="/scripts/network.js"></script>
+
+
+
 </head>
 
-<body>
-  <% if(name) { %>
-    <h1><%= name + ', '%></h1>
-  <% }%>
-  <h1> Have fun! 🥔</h1>
-  <button class="btn-primary">Click</button>
+<body class="all-background">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/">
+        <i class="fas fa-tasks"></i>
+        <span class="nav left"> DUO TASKER</span>
+    </a>
+    <% if(name) { %>
+      <span class="greet"><%= 'Hi, ' + name %>
+      <a class="login" href="/">
+        <span class="nav right"> LOGOUT</span>
+      </a>
+    </span>
+    <% } else {%>
+      <a class="login" href="/login/1">
+        <span class="nav right"> LOGIN</span>
+      </a>
+    <% }%>
+
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <button class="watch">Movies</button>
+        <img class="card-img" src="https://image.freepik.com/free-photo/old-retro-tv-it-s-still-life-with-flower-vases_1150-19437.jpg" alt="Card image cap">
+      </div>
+      <div class="card">
+        <button class="buy" role="button">Products</button>
+        <img class="card-img" src="https://image.freepik.com/free-psd/online-delivery-with-smartphone-mockup-template-with-delivery-package_1150-38852.jpg" alt="Card image cap">
+      </div>
+      <div class="card">
+        <button class="list" role="button">My List</button>
+        <img class="card-img" src="https://image.freepik.com/free-photo/top-view-notebook-ice-cream-dark-background_140725-134260.jpg" alt="Card image cap">
+      </div>
+    </div>
+  </div>
+</div>
+  </main>
+
+  <!-- Font Awesome-->
+  <script src="https://kit.fontawesome.com/afa696a2f8.js" crossorigin="anonymous"></script>
 </body>
+
 
 </html>

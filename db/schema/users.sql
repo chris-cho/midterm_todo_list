@@ -11,19 +11,23 @@ CREATE TABLE users (
 
 CREATE TABLE lists (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id VARCHAR(255) NOT NULL,
+  user_id INTEGER NOT NULL,
   name VARCHAR(255) NOT NULL,
   active BOOLEAN NOT NULL DEFAULT true,
   date_created DATE NOT NULL,
-  due_date DATE
+  due_date DATE,
+  FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE tasks (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id VARCHAR(255) NOT NULL,
-  list_id VARCHAR(255) NOT NULL,
-  activity_id VARCHAR(255) NOT NULL,
+  user_id INTEGER NOT NULL,
+  list_id INTEGER NOT NULL,
+  activity_id INTEGER,
   active BOOLEAN NOT NULL DEFAULT true,
   date_created DATE NOT NULL,
-  due_date DATE
+  due_date DATE,
+  FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+  FOREIGN KEY(list_id) REFERENCES lists(id) ON DELETE CASCADE
 );
+© 2021 GitHub, Inc.
