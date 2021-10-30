@@ -13,7 +13,7 @@ const addMovie = function(movie, list) {
 
   INSERT INTO tasks (user_id, list_id, date_created, due_date)
   VALUES
-    ($6, $7, $10, $11);
+    ($6, $7, $8, $9);
 
   INSERT INTO tasks (activity_id)
   SELECT id FROM products WHERE title = $3;`;
@@ -48,8 +48,16 @@ const addProduct = function(product) {
   const queryString = `
   INSERT INTO products (rating, name, category, price, url)
   VALUES
-    ($1, $2, $3, $4, $5);`;
-  const params = [product.rating, product.name, product.category, product.price, product.url];
+    ($1, $2, $3, $4, $5);
+
+  INSERT INTO tasks (user_id, list_id, date_created, due_date)
+  VALUES
+    ($6, $7, $8, $9);
+
+  INSERT INTO tasks (activity_id)
+  SELECT id FROM products WHERE name = $2;`;
+
+  const params = [product.rating, product.name, product.category, product.price, product.url, list.user_id, list.id, list.due_date];
   return pool.query(queryString, params)
     .then(res => res.rows);
 };
