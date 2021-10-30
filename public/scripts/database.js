@@ -5,12 +5,20 @@ const db = new Pool(dbParams);
 db.connect();
 
 //this should be triggered on the click of the ADD button for a movie task
-const addMovie = function(movie) {
+const addMovie = function(movie, list) {
   const queryString = `
   INSERT INTO products (rating, director, title, genre, url)
   VALUES
-    ($1, $2, $3, $4, $5);`;
-  const params = [movie.rating, movie.director, movie.title, movie.genre, movie.url];
+    ($1, $2, $3, $4, $5);
+
+  INSERT INTO tasks (user_id, list_id, date_created, due_date)
+  VALUES
+    ($6, $7, $10, $11);
+
+  INSERT INTO tasks (activity_id)
+  SELECT id FROM products WHERE title = $3;`;
+
+  const params = [movie.rating, movie.director, movie.title, movie.genre, movie.url, list.user_id, list.id, list.due_date];
   return db.query(queryString, params)
     .then(res => res.rows);
 };
