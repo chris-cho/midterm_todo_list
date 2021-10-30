@@ -11,14 +11,14 @@
 ## Dependencies
 
 - Chalk ^2.4.2
-- Cookie-session ^1.4.0",
-- Dotenv ^2.0.0",
-- Ejs ^2.6.2",
-- Express ^4.17.1",
-- Morgan ^1.9.1",
-- pg ^8.5.0",
-- pg-native ^3.0.0",
-- Requests ^0.3.0",
+- Cookie-session ^1.4.0"
+- Dotenv ^2.0.0"
+- Ejs ^2.6.2"
+- Express ^4.17.1"
+- Morgan ^1.9.1"
+- pg ^8.5.0"
+- pg-native ^3.0.0"
+- Requests ^0.3.0"
 - Sass ^1.35.1"
 
 ## API List
