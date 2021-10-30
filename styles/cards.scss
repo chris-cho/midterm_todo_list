@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+.watching{
+    background-color: #E05D5D;
+    background-image: url("https://www.transparenttextures.com/patterns/simple-dashed.png");
+}
+
+
+.eating{
+    background-color: #ffb344;
+    background-image: url("https://www.transparenttextures.com/patterns/skulls.png");
+
+}
+
+.reading{
+    background-color: #E05D5D;
+    background-image: url("https://www.transparenttextures.com/patterns/simple-dashed.png");
+
+}
+
+.buying{
+    background-color: #ffb344;
+    background-image: url("https://www.transparenttextures.com/patterns/skulls.png");
+
+}
+
+
+.col-md-3 P{
+    color: white;
+}
