@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>Home Page!</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -11,10 +11,16 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/database.js"></script>
+  <script type="text/javascript" src="/scripts/network.js"></script>
 </head>
 
 <body>
-  <h1>Have fun! 🥔</h1>
+  <% if(name) { %>
+    <h1><%= name + ', '%></h1>
+  <% }%>
+  <h1> Have fun! 🥔</h1>
+  <button class="btn-primary">Click</button>
 </body>
 
 </html>
