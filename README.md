@@ -10,18 +10,22 @@
 
 ## Dependencies
 
-- Express
-- Node 5.10.x or above
+- Chalk ^2.4.2
+- Cookie-session ^1.4.0",
+- Dotenv ^2.0.0",
+- Ejs ^2.6.2",
+- Express ^4.17.1",
+- Morgan ^1.9.1",
+- pg ^8.5.0",
+- pg-native ^3.0.0",
+- Requests ^0.3.0",
+- Sass ^1.35.1"
 
 ## API List
 
 1. Film rating - IMDb https://rapidapi.com/apidojo/api/imdb8
-2. Places to eat - Google Maps https://developers.google.com/maps/documentation/places/web-service/get-api-key
-3. Books - Google Books https://developers.google.com/books/docs/v1/getting_started
-4. Products - Wolfram Alpha APIs?
+2. Products - Fake Store API https://fakestoreapi.com/'
 
 ## Final Product
 
-
-user story
-emphasis on minimum viable product
+!["Landing Page"](https://github.com/chris-cho/midterm_todo_list/blob/finishing-touches/docs/duo_tasker.png)
