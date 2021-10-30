@@ -35,3 +35,66 @@ const viewMovie = function(movie_id) {
     .then(res => res.rows[0]);
 };
 exports.viewMovie = viewMovie;
+
+const addProduct = function(product) {
+  const queryString = `
+  INSERT INTO products (rating, name, category, price, url)
+  VALUES
+    ($1, $2, $3, $4, $5);`;
+  const params = [product.rating, product.name, product.category, product.price, product.url];
+  return pool.query(queryString, params)
+    .then(res => res.rows);
+};
+exports.addProduct = addProduct;
+
+const delProduct = function(product_id) {
+  const queryString = `
+  DELETE FROM products
+  WHERE id = $1;`;
+  const params = [product_id];
+  return pool.query(queryString, params)
+    .then(res => res.rows);
+};
+exports.delProduct = delProduct;
+
+const viewProduct = function(product_id) {
+  const queryString = `
+  SELECT * FROM products
+  WHERE id = $1;`;
+  const params = [product_id];
+  return pool.query(queryString, params)
+    .then(res => res.rows);
+};
+exports.viewProduct = viewProduct;
+
+const addList = function(list) {
+  const queryString = `
+  INSERT INTO lists (user_id, name, active, date_created, due_date)
+  VALUES
+    ($1, $2, $3, $4, $5);`;
+  const params = [lists.user_id, lists.name, lists.active, lists.date_created, lists.due_date];
+  return pool.query(queryString, params)
+    .then(res => res.rows);
+};
+exports.addList = addList;
+
+const viewList = function(list_id) {
+  const queryString = `
+  SELECT FROM lists
+  WHERE id = $1;`;
+  const params = [list_id];
+  return pool.query(queryString, params)
+    .then(res => res.rows);
+};
+exports.viewList = viewList;
+
+const delList = function(list_id) {
+  const queryString = `
+  SELECT * FROM lists
+  WHERE id = $1;`;
+  const params = [list_id];
+  return pool.query(queryString, params)
+    .then(res => res.rows);
+};
+exports.delList = delList;
+

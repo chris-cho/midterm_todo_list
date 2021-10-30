@@ -1,6 +1,83 @@
-// See: https://sass-lang.com/
+body {
+  width: 100%;
+  height: 100%;
+  background: rgb(255,248,229);
+background: radial-gradient(circle, rgba(255,248,229,0.3575805322128851) 45%, rgba(255,179,68,0.365983893557423) 91%);
 
-body,
-html {
-  margin: 0;
+  &.all-background {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.all-background::after {
+    content: "";
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: 0.60;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+  }
+
+  font-family: 'Cabin',
+  sans-serif;
+
+  main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    top: 25rem;
+    opacity: 1;
+  }
+
+  h1 {
+    font-size: 2em;
+    color: #323232;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
 }
+
+@media (min-width: 992px) {
+  body main {
+    top: 140px;
+  }
+}
+
+.navbar-expand-lg{
+  background: rgb(163, 208, 219);
+  background: linear-gradient(
+    227deg,
+    rgba(163, 208, 219, 1) 0%,
+    rgba(163, 176, 219, 1) 20%,
+    rgba(163, 173, 219, 1) 34%,
+    rgba(163, 219, 208, 1) 59%,
+    rgba(163, 208, 219, 1) 74%,
+    rgba(163, 208, 219, 1) 100%
+  );
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.greet {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
