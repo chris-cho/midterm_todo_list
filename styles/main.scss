@@ -19,11 +19,13 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .row{
   width: 100%;
+  flex-direction: row;
+  flex-wrap: unset;
 }
 
 .col-md-3{

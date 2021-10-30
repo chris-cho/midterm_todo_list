@@ -7,22 +7,28 @@ db.connect();
 //this should be triggered on the click of the ADD button for a movie task
 const addMovie = function(movie, list) {
   const queryString = `
-  INSERT INTO products (rating, director, title, genre, url)
+  INSERT INTO products (rating, title, genre, url)
   VALUES
-    ($1, $2, $3, $4, $5);
+    ($1, $2, $3, $4);`;
 
-  INSERT INTO tasks (user_id, list_id, date_created, due_date)
+  const params = [movie.rating, movie.title, movie.genre, movie.url];
+  return db.query(queryString, params)
+    .then(res => addMovieTask(movie, list, res.rows));
+};
+exports.addMovie = addMovie;
+
+const addMovieTask = function(movie, list, result) {
+  const queryString = `
+  INSERT INTO tasks (user_id, list_id, activity_id, date_created, due_date)
   VALUES
-    ($6, $7, $8, $9);
+    ($1, $2, $3, $4, $5);`;
 
-  INSERT INTO tasks (activity_id)
-  SELECT id FROM products WHERE title = $3;`;
-
-  const params = [movie.rating, movie.director, movie.title, movie.genre, movie.url, list.user_id, list.id, list.due_date];
+  const params = [list.user_id, list.id, result.id, list.date_created, list.due_date];
   return db.query(queryString, params)
     .then(res => res.rows);
 };
-exports.addMovie = addMovie;
+exports.addMovieTask = addMovieTask;
+
 
 const delMovie = function(movie_id) {
   const queryString = `

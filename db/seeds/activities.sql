@@ -1,7 +1,7 @@
-INSERT INTO movies (rating, director, title, genre, url)
+INSERT INTO movies (rating, title, genre, url)
 VALUES
-  (4, 'James Cameron', 'Avatar', 'Sci-fi', 'https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_FMjpg_UX1000_.jpg'),
-  (5, 'Christopher Nolan', 'Inception', 'Action', 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg');
+  (4, 'Avatar', 'Sci-fi', 'https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_FMjpg_UX1000_.jpg'),
+  (5, 'Inception', 'Action', 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg');
 
 INSERT INTO products (rating, name, category, price, url)
 VALUES

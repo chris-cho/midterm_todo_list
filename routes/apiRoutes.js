@@ -51,6 +51,18 @@ module.exports = (db) => {
       }
     });
   });
+
+  router.post("/movies", (req, res) => {
+    const title = "The Amazing Spiderman";
+    const rating = 5;
+    const genre = "Superhero";
+    const url = "https://upload.wikimedia.org/wikipedia/en/0/02/The_Amazing_Spider-Man_theatrical_poster.jpeg";
+    const movie = {title, rating, genre, url};
+    const list = {user_id:1, id: 1, due_date: "2021-10-31"};
+    database.addMovie(movie, list)
+      .then(console.log('Movie task added!'));
+  });
+
   router.get("/products", (req, res) => {
     const requestOptions = {
       url: 'https://fakestoreapi.com/products?limit=5',
@@ -72,8 +84,8 @@ module.exports = (db) => {
 
   router.get("/lists", (req, res) => {
     database.listList()
-    .then(lists =>
-      console.log(lists));
+      .then(lists =>
+        console.log(lists));
   });
   return router;
 };

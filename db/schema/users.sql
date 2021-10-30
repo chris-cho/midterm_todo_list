@@ -27,7 +27,6 @@ CREATE TABLE tasks (
   active BOOLEAN NOT NULL DEFAULT true,
   date_created DATE NOT NULL,
   due_date DATE,
-  FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+  FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
   FOREIGN KEY(list_id) REFERENCES lists(id) ON DELETE CASCADE
 );
-© 2021 GitHub, Inc.
